@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get -qq -y --force-yes install gcc libpcre++-dev libcurl4-openssl-dev libxml2-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libmcrypt-dev libmysql++-dev autoconf libevent-dev libltdl-dev libxml2-dev libxslt1-dev
+sudo apt-get -qq -y --force-yes install gcc libpcre++-dev libcurl4-openssl-dev libxml2-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libmcrypt-dev libmysql++-dev autoconf libevent-dev libltdl-dev libxml2-dev libxslt1-dev libreadline-dev
 
 etxdir="$instdir/etc"
 
