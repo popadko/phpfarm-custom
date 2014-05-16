@@ -10,14 +10,15 @@ exts=(mongo redis);
 
 for ext in "${exts[@]}"
 do
-  "$3/pear-$1" install "$ext";
+  "$3/pecl-$1" install "$ext";
   echo "extension=$ext.so" > "$2/etc/conf.d/$ext.ini";
 done
 
 inidscript="/etc/init.d/php-fpm"
 
-echo "php_fpm_BIN=$3/../current/sbin/php-fpm\n" | sudo tee -a "$inidscript"
-echo "php_fpm_CONF=$3/../current/etc/php-fpm.conf\n" | sudo tee -a "$inidscript"
+echo '#!/bin/sh'
+echo "php_fpm_BIN=$3/../current/sbin/php-fpm" | sudo tee -a "$inidscript" > /dev/null
+echo "php_fpm_CONF=$3/../current/etc/php-fpm.conf" | sudo tee -a "$inidscript" > /dev/null
 
 cat "$3/../../custom/php-fpm" | sudo tee -a "$inidscript"
 
