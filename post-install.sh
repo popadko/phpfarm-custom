@@ -10,10 +10,13 @@ exts=(mongo redis);
 
 for ext in "${exts[@]}"
 do
-  "$2/bin/pecl" install "$ext";
+  "$3/pear-$1" install "$ext";
   echo "extension=$ext.so" > "$2/etc/conf.d/$ext.ini";
 done
 
+sudo cp "$3/../../custom/php-fpm" "/etc/init.d/"
+
+sudo update-rc.d php-fpm defaults
 
 # The exit status must be 0 when the scripts terminates without any error.
 # Any other value will be treated as an error.
