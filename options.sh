@@ -14,8 +14,8 @@ initarget="$etxdir/conf.d/php.ini"
 configoptions="\
 --with-config-file-path=$etxdir \
 --with-config-file-scan-dir=$etxdir/conf.d \
---with-fpm-user=vagrant \
---with-fpm-group=vagrant \
+--with-fpm-user=www-data \
+--with-fpm-group=www-data \
 --enable-cgi \
 --enable-fpm \
 --enable-soap \
